@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">OpenAIConnector</string>
+    <string name="chat_hint">напішыце паведамленне</string>
+</resources>
