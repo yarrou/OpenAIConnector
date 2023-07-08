@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">OpenAIConnector</string>
     <string name="chat_hint">eine Nachricht schreiben</string>
+    <string name="chat_greeting">Willkommen im GPT-3.5-Turbo-Chatraum. Sende deine Nachricht, um mit dem Chatten zu beginnen.</string>
 </resources>

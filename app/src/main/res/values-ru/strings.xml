@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">OpenAIConnector</string>
     <string name="chat_hint">напишите сообщение</string>
+    <string name="chat_greeting">Добро пожаловать в чат GPT-3,5 turbo. Для начала общения отправьте свое сообщение.</string>
 </resources>
