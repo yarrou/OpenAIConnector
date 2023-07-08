@@ -14,16 +14,15 @@ import android.widget.TextView;
 import de.alexkononsol.gptchatapp.R;
 import de.alexkononsol.gptchatapp.entity.Message;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MessageAdapter extends BaseAdapter {
-
-    List<Message> messages = new ArrayList<Message>();
+    List<Message> messages;
     Context context;
 
-    public MessageAdapter(Context context) {
+    public MessageAdapter(Context context, List<Message> messages) {
         this.context = context;
+        this.messages = messages;
     }
 
     public void add(Message message) {
