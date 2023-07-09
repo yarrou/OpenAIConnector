@@ -15,6 +15,8 @@
         android:textColor="#fff"
         android:padding="10dp"
         android:elevation="2dp"
+        android:longClickable="true"
+        android:textIsSelectable="true"
         android:textSize="18dp"
         android:layout_alignParentRight="true"
         android:text="Placeholder message"
