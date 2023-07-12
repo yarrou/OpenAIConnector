@@ -2,4 +2,6 @@
     <string name="app_name">OpenAIConnector</string>
     <string name="chat_hint">eine Nachricht schreiben</string>
     <string name="chat_greeting">Willkommen im GPT-3.5-Turbo-Chatraum. Sende deine Nachricht, um mit dem Chatten zu beginnen.</string>
+    <string name="version">version : %s</string>
+    <string name="text_about">Diese Anwendung ist für die Nutzung von OpenAI-Diensten konzipiert. Die Verbindung erfolgt über den Server des Anwendungsentwicklers. Die Anwendung wurde in erster Linie für den persönlichen Bedarf des Entwicklers entwickelt. Da OpenAI seine APIs kostenpflichtig zur Verfügung stellt, ist die Möglichkeit, Zugang zu gewähren, begrenzt. </string>
 </resources>

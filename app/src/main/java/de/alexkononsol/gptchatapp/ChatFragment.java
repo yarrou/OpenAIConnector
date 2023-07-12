@@ -77,8 +77,6 @@ public class ChatFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        SharedPreferenceAssistant.initSharedPreferences(getView().getContext());
-        SettingsManager.initSettings();
 
         editText = (EditText) getView().findViewById(R.id.editText);
         dbHelper = new MessagesDBHelper(getContext());

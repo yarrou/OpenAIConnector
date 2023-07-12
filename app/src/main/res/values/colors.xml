@@ -10,4 +10,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="heavenly">#4aaee8</color>
+    <color name="gptBack">#74aa9c</color>
 </resources>

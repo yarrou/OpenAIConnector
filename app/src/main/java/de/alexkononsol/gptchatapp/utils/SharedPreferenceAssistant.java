@@ -2,6 +2,7 @@ package de.alexkononsol.gptchatapp.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import de.alexkononsol.gptchatapp.entity.Settings;
 import com.google.gson.Gson;
@@ -17,7 +18,7 @@ public class SharedPreferenceAssistant {
     }
 
     public static Settings getSettingFromSharedPreferences(){
-
+        Log.d("chatgpt","getSettingsFromSharedPreferences()");
         String result = mSharedPreferences.getString(Constants.SHARED_PREFERENCES_SETTINGS, null);
         Gson gson = new Gson();
         return gson.fromJson(result, Settings.class);
@@ -37,9 +38,11 @@ public class SharedPreferenceAssistant {
 
             mEditor.putString(Constants.SHARED_PREFERENCES_SETTINGS, result);
             mEditor.commit();
+            Log.d("chatgpt", "Settings successful saved");
         }
         catch (Exception e){
             e.printStackTrace();
+            Log.d("chatgpt","Settings unsuccessful saved , error : " + e.getStackTrace().toString());
             //LogHelper.logError(SharedPreferenceAssistant.class,e.getCause() + " - " + e.getMessage(),e);
         }
     }

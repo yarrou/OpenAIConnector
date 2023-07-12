@@ -1,5 +1,7 @@
 package de.alexkononsol.gptchatapp.utils;
 
+import android.util.Log;
+
 import de.alexkononsol.gptchatapp.entity.Settings;
 
 public class SettingsManager {
@@ -16,6 +18,7 @@ public class SettingsManager {
         settings = SharedPreferenceAssistant.getSettingFromSharedPreferences();
 
         if (settings == null) {
+            Log.d("chatgpt","Settings is null");
             settings = new Settings();
         }
         settings = getSettings();
@@ -27,7 +30,9 @@ public class SettingsManager {
     }
 
     public static void save() {
+        Log.d("chatgpt","save Settings");
         SharedPreferenceAssistant.save(settings);
+
     }
 
     public static String getStringSettings() {

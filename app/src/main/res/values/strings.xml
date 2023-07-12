@@ -2,4 +2,6 @@
     <string name="app_name">OpenAIConnector</string>
     <string name="chat_hint">Write a message</string>
     <string name="chat_greeting">Welcome to the GPT-3.5 turbo chat. Send your message to start chatting.</string>
+    <string name="version">version : %s</string>
+    <string name="text_about"> This application is designed to utilize the services of OpenAI . Connection is through the application developer\'s server. The application is developed primarily for the personal needs of the developer. Since OpenAI provides its APIs on a paid basis, the ability to provide access is limited.  </string>
 </resources>
