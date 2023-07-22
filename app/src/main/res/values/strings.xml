@@ -4,4 +4,23 @@
     <string name="chat_greeting">Welcome to the GPT-3.5 turbo chat. Send your message to start chatting.</string>
     <string name="version">version : %s</string>
     <string name="text_about"> This application is designed to utilize the services of OpenAI . Connection is through the application developer\'s server. The application is developed primarily for the personal needs of the developer. Since OpenAI provides its APIs on a paid basis, the ability to provide access is limited.  </string>
+
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="registration_offer">don\'t have an account yet?</string>
+    <string name="sign_up_button_text">Sign Up</string>
+    <string name="continue_offer">or continue without an account</string>
+    <string name="continue_button_text">continue</string>
+
+    <string name="registration_title">Registration</string>
+    <string name="registration_email_prompt">your valid EMAIL</string>
+    <string name="registration_password_length_prompt">at least five characters</string>
+    <string name="registration_password_repeat_prompt">repeat the password</string>
+    <string name="registration_button_text">Create an account</string>
+    <string name="warning_passwords_don_t_match">passwords don\'t match</string>
+    <string name="warning_password_is_too_short">the password must be at least 5 characters long</string>
+    <string name="registration_success_message">An email with instructions on how to activate your account has been sent to the email address you provided.</string>
+
 </resources>

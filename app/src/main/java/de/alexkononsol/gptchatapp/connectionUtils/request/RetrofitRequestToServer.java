@@ -6,6 +6,7 @@ import android.util.Log;
 import de.alexkononsol.gptchatapp.connectionUtils.Api;
 import de.alexkononsol.gptchatapp.connectionUtils.ApiInterface;
 import de.alexkononsol.gptchatapp.connectionUtils.ServerResponse;
+import de.alexkononsol.gptchatapp.dto.UserForm;
 import de.alexkononsol.gptchatapp.entity.ChatGPTMessage;
 
 import java.io.IOException;
@@ -83,6 +84,33 @@ public class RetrofitRequestToServer {
         } catch (IOException e) {
             serverResponse.setCode(500);
             serverResponse.setData(e.getLocalizedMessage());
+        }
+        return serverResponse;
+    }
+    public ServerResponse loginOrRegistration(UserForm userForm, RetrofitRequestType type) {
+        Call<String> cityCall;
+        apiInterface = Api.getStringClient(url);
+        RequestBody body = RequestBody.create(MediaType.parse("application/json"), userForm.toString());
+        if (type.type == 2) cityCall = apiInterface.login(body, lang);
+        else cityCall = apiInterface.registration(body, lang);
+        try {
+            Response<String> response = cityCall.execute();
+            if (response.isSuccessful()) {
+                serverResponse.setCode(response.code());
+                serverResponse.setData(response.body());
+            } else {
+                serverResponse.setCode(response.code());
+                try {
+                    assert response.errorBody() != null;
+                    serverResponse.setData(response.errorBody().string());
+                } catch (IOException e) {
+                    serverResponse.setData(e.getLocalizedMessage());
+                }
+            }
+        } catch (IOException e) {
+            serverResponse.setCode(500);
+            serverResponse.setData(e.getLocalizedMessage());
+            e.printStackTrace();
         }
         return serverResponse;
     }

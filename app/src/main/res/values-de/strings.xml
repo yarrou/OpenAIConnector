@@ -4,4 +4,22 @@
     <string name="chat_greeting">Willkommen im GPT-3.5-Turbo-Chatraum. Sende deine Nachricht, um mit dem Chatten zu beginnen.</string>
     <string name="version">version : %s</string>
     <string name="text_about">Diese Anwendung ist für die Nutzung von OpenAI-Diensten konzipiert. Die Verbindung erfolgt über den Server des Anwendungsentwicklers. Die Anwendung wurde in erster Linie für den persönlichen Bedarf des Entwicklers entwickelt. Da OpenAI seine APIs kostenpflichtig zur Verfügung stellt, ist die Möglichkeit, Zugang zu gewähren, begrenzt. </string>
+
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in_short">Anmelden</string>
+    <string name="action_sign_in">Anmelden</string>
+    <string name="registration_offer">Sie haben noch keinen Account?</string>
+    <string name="sign_up_button_text">Registrieren</string>
+    <string name="continue_offer">oder ohne Konto fortfahren</string>
+    <string name="continue_button_text">weiter</string>
+
+    <string name="registration_title">Registrierung</string>
+    <string name="registration_email_prompt">Ihre aktuelle EMAIL</string>
+    <string name="registration_password_length_prompt">mindestens fünf Zeichen</string>
+    <string name="registration_password_repeat_prompt">Wiederholen Sie das Passwort</string>
+    <string name="registration_button_text">Ein Konto eröffnen</string>
+    <string name="warning_passwords_don_t_match">Passwörter stimmen nicht überein</string>
+    <string name="warning_password_is_too_short">das Passwort muss mindestens 5 Zeichen lang sein</string>
+    <string name="registration_success_message">Eine E-Mail mit Anweisungen zur Aktivierung Ihres Kontos wurde an die von Ihnen angegebene E-Mail-Adresse gesandt.</string>
 </resources>

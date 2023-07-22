@@ -4,4 +4,22 @@
     <string name="chat_greeting">Добро пожаловать в чат GPT-3,5 turbo. Для начала общения отправьте свое сообщение.</string>
     <string name="version">версия : %s</string>
     <string name="text_about">Это приложение предназначено для использования сервисов компании OpenAI . Подключение происходит через сервер разработчика приложения. Приложение разрабатывается в первую очередь для личных потребностей разработчика. Так как OpenAI предоставляет свои API на платной основе, то возможности по предоставлению доступа ограничены. </string>
+
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Пароль</string>
+    <string name="action_sign_in_short">Войти</string>
+    <string name="action_sign_in">Войти</string>
+    <string name="registration_offer">у вас еще нет учетной записи?</string>
+    <string name="sign_up_button_text">Зарегистрироваться</string>
+    <string name="continue_offer">или продолжить работу без аккаунта</string>
+    <string name="continue_button_text">продолжить</string>
+
+    <string name="registration_title">Регистрация</string>
+    <string name="registration_email_prompt">ваш действующий EMAIL</string>
+    <string name="registration_password_length_prompt">не менее пяти символов</string>
+    <string name="registration_password_repeat_prompt">повторите пароль</string>
+    <string name="registration_button_text">Создать учетную запись</string>
+    <string name="warning_passwords_don_t_match">пароли не совпадают</string>
+    <string name="warning_password_is_too_short">пароль должен состоять не менее чем из 5 символов</string>
+    <string name="registration_success_message">Письмо с инструкциями по активации аккаунта отправлено на указанный вами адрес электронной почты.</string>
 </resources>

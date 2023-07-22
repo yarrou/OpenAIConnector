@@ -4,4 +4,22 @@
     <string name="chat_greeting">Сардэчна запрашаем у чат GPT-3,5 turbo. Для пачатку зносін адпраўце сваё паведамленне.</string>
     <string name="version">версія : %s</string>
     <string name="text_about">Гэта дадатак прызначана для выкарыстання сэрвісаў кампаніі Open AI . Падключэнне адбываецца праз сервер распрацоўніка прыкладання. Дадатак распрацоўваецца ў першую чаргу для асабістых патрэбаў распрацоўніка. Так як OpenAI прадастаўляе свае API на платнай аснове, то магчымасці па прадастаўленні доступу абмежаваныя.</string>
+
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Пароль</string>
+    <string name="action_sign_in_short">Увайсці</string>
+    <string name="action_sign_in">Увайсці</string>
+    <string name="registration_offer">у Вас яшчэ няма ўліковага запісу?</string>
+    <string name="sign_up_button_text">Зарэгістравацца</string>
+    <string name="continue_offer">або працягнуць працу без акаўнта</string>
+    <string name="continue_button_text">працягваць</string>
+
+    <string name="registration_title">Рэгістрацыя</string>
+    <string name="registration_email_prompt">Ваш дзеючы EMAIL</string>
+    <string name="registration_password_length_prompt">не менш за пяць сімвалаў</string>
+    <string name="registration_password_repeat_prompt">паўтарыце пароль</string>
+    <string name="registration_button_text">Стварыць уліковы запіс</string>
+    <string name="warning_passwords_don_t_match">паролі не супадаюць</string>
+    <string name="warning_password_is_too_short">пароль павінен складацца не менш чым з 5 знакаў</string>
+    <string name="registration_success_message">Ліст з інструкцыямі па актывацыі акаўнта адпраўлена на паказаны Вамі адрас электроннай пошты.</string>
 </resources>
