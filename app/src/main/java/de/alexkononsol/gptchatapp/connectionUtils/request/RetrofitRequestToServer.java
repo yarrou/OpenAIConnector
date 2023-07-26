@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.util.Locale;
 
 import de.alexkononsol.gptchatapp.utils.Constants;
+import de.alexkononsol.gptchatapp.utils.SettingsManager;
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
 import retrofit2.Call;
@@ -21,6 +22,7 @@ import retrofit2.Response;
 public class RetrofitRequestToServer {
     private final String lang;
     private final String url;
+    private final String token;
     private final ServerResponse serverResponse;
     private ApiInterface apiInterface;
     private Context context;
@@ -28,21 +30,23 @@ public class RetrofitRequestToServer {
     public RetrofitRequestToServer(Context context) {
         serverResponse = new ServerResponse();
         url = Constants.DEFAULT_HOST_URL;
-        Log.i("GPT","url = " + url);
+        Log.i("GPT", "url = " + url);
         lang = Locale.getDefault().getLanguage();
+        token = SettingsManager.getSettings().getAuthToken();
         this.context = context;
     }
+
     public ServerResponse testResponseExecute() {
         apiInterface = Api.getStringClient(url);
         Call<String> cityCall = apiInterface.getTestMessage();
         try {
             Response<String> response = cityCall.execute();
             if (response.isSuccessful()) {
-                Log.w("RetrofitRequestToServer","response is successful");
+                Log.w("RetrofitRequestToServer", "response is successful");
                 serverResponse.setCode(response.code());
                 serverResponse.setData(response.body());
             } else {
-                Log.w("RetrofitRequestToServer","response is unsuccessful");
+                Log.w("RetrofitRequestToServer", "response is unsuccessful");
                 serverResponse.setCode(response.code());
                 try {
                     assert response.errorBody() != null;
@@ -52,7 +56,7 @@ public class RetrofitRequestToServer {
                 }
             }
         } catch (IOException e) {
-            Log.w("RetrofitRequestToServer","IOException : " + e.getLocalizedMessage());
+            Log.w("RetrofitRequestToServer", "IOException : " + e.getLocalizedMessage());
             serverResponse.setCode(500);
             serverResponse.setData(e.getLocalizedMessage());
         }
@@ -63,21 +67,21 @@ public class RetrofitRequestToServer {
         Log.i("GPT", "url = " + url);
         apiInterface = Api.getStringClient(url);
         RequestBody body = RequestBody.create(MediaType.parse("application/json"), gptMessage.toString());
-        Call<String> gptCall = apiInterface.postMessage(body);
+        Call<String> gptCall = apiInterface.postMessage(body, token, lang);
         try {
             Response<String> response = gptCall.execute();
             if (response.isSuccessful()) {
-                Log.i("GPT","response is successful");
+                Log.i("GPT", "response is successful");
                 serverResponse.setCode(response.code());
                 serverResponse.setData(response.body());
             } else {
-                Log.w("GPT","response is unsuccessful");
+                Log.w("GPT", "response is unsuccessful");
                 serverResponse.setCode(response.code());
                 try {
                     assert response.errorBody() != null;
                     serverResponse.setData(response.errorBody().string());
                 } catch (IOException e) {
-                    Log.e("GPT",e.getStackTrace().toString());
+                    Log.e("GPT", e.getLocalizedMessage());
                     serverResponse.setData(e.getLocalizedMessage());
                 }
             }
@@ -87,6 +91,7 @@ public class RetrofitRequestToServer {
         }
         return serverResponse;
     }
+
     public ServerResponse loginOrRegistration(UserForm userForm, RetrofitRequestType type) {
         Call<String> cityCall;
         apiInterface = Api.getStringClient(url);
