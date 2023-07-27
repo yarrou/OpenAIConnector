@@ -1,4 +1,4 @@
-package de.alexkononsol.gptchatapp;
+package de.alexkononsol.gptchatapp.ui.fragments;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -22,14 +22,13 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import de.alexkononsol.gptchatapp.R;
 import de.alexkononsol.gptchatapp.connectionUtils.ServerResponse;
 import de.alexkononsol.gptchatapp.connectionUtils.request.RetrofitRequestToServer;
 import de.alexkononsol.gptchatapp.entity.Message;
 import de.alexkononsol.gptchatapp.messagesDataBase.MessagesDBHelper;
 import de.alexkononsol.gptchatapp.utils.MessageAdapter;
 import de.alexkononsol.gptchatapp.utils.MessagesConverter;
-import de.alexkononsol.gptchatapp.utils.SettingsManager;
-import de.alexkononsol.gptchatapp.utils.SharedPreferenceAssistant;
 
 public class ChatFragment extends Fragment {
     private EditText editText;

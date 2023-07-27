@@ -22,5 +22,23 @@
     <string name="warning_passwords_don_t_match">passwords don\'t match</string>
     <string name="warning_password_is_too_short">the password must be at least 5 characters long</string>
     <string name="registration_success_message">An email with instructions on how to activate your account has been sent to the email address you provided.</string>
+    <string name="settings_title">Settings</string>
+
+    <string name="userAccountTitle">User account</string>
+    <string name="logoutButtonText">Log out</string>
+    <string name="sign_in_button_text">Sign in</string>
+    <string name="authInfo">you are logged in as : </string>
+    <string name="anonimous">you are not logged in, minimum of functions</string>
+
+    <string name="chat_settings_title">Chat settings</string>
+    <string name="name_text_size_settings">Text size</string>
+    <string name="textSizeSmall">Small</string>
+    <string name="textSizeNormal">Normal</string>
+    <string name="textSizeLarge">Large</string>
+
+    <string name="settingsHelpButton">show the manual</string>
+    <string name="settingsHelpName">manual</string>
+    <string name="viewHelpOnStart">show description at program start</string>
+    <string name="saveSettingsToast">Settings saved</string>
 
 </resources>

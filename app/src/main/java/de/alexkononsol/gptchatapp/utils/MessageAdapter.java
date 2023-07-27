@@ -66,7 +66,7 @@ public class MessageAdapter extends BaseAdapter {
             holder.messageBody.setText(message.getText());
             holder.avatar.setBackgroundResource(R.drawable.ic_launcher_round);
         }
-
+        holder.messageBody.setTextSize(SettingsManager.getSettings().getTextSize());
         return convertView;
     }
 

@@ -22,4 +22,23 @@
     <string name="warning_passwords_don_t_match">Passwörter stimmen nicht überein</string>
     <string name="warning_password_is_too_short">das Passwort muss mindestens 5 Zeichen lang sein</string>
     <string name="registration_success_message">Eine E-Mail mit Anweisungen zur Aktivierung Ihres Kontos wurde an die von Ihnen angegebene E-Mail-Adresse gesandt.</string>
+    <string name="settings_title">Einstellungen</string>
+
+    <string name="userAccountTitle">Konto</string>
+    <string name="logoutButtonText">Abmelden </string>
+    <string name="sign_in_button_text">Anmelden</string>
+    <string name="authInfo">Sie sind eingeloggt als : </string>
+    <string name="anonimous">Sie sind nicht eingeloggt, Mindestfunktionen</string>
+
+    <string name="chat_settings_title">Chat-Einstellungen</string>
+    <string name="name_text_size_settings">Textgröße</string>
+    <string name="textSizeSmall">klein</string>
+    <string name="textSizeNormal">mittel</string>
+    <string name="textSizeLarge">groß</string>
+
+    <string name="settingsHelpButton">Anweisungen anzeigen</string>
+    <string name="settingsHelpName">Anleitung</string>
+    <string name="viewHelpOnStart">Beschreibung bei Programmstart anzeigen</string>
+    <string name="saveSettingsToast">Gespeicherte Einstellungen</string>
+
 </resources>

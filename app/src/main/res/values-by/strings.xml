@@ -22,4 +22,23 @@
     <string name="warning_passwords_don_t_match">паролі не супадаюць</string>
     <string name="warning_password_is_too_short">пароль павінен складацца не менш чым з 5 знакаў</string>
     <string name="registration_success_message">Ліст з інструкцыямі па актывацыі акаўнта адпраўлена на паказаны Вамі адрас электроннай пошты.</string>
+    <string name="settings_title">Наладжваньне</string>
+
+    <string name="userAccountTitle">Уліковы запіс карыстальніка</string>
+    <string name="logoutButtonText">Выйсці</string>
+    <string name="sign_in_button_text">Увайсці</string>
+    <string name="authInfo">вы ўвайшлі ў сістэму як : </string>
+    <string name="anonimous">вы не ўвайшлі, мінімум функцый</string>
+
+    <string name="chat_settings_title">Налады чата</string>
+    <string name="name_text_size_settings">Памер тэксту</string>
+    <string name="textSizeSmall">маленькі</string>
+    <string name="textSizeNormal">сярэдні</string>
+    <string name="textSizeLarge">вялікі</string>
+
+    <string name="settingsHelpButton">паказаць інструкцыю</string>
+    <string name="settingsHelpName">інструкцыя</string>
+    <string name="viewHelpOnStart">паказваць апісанне пры старце праграмы</string>
+    <string name="saveSettingsToast">Налады захаваны</string>
+
 </resources>

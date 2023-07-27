@@ -18,7 +18,7 @@
 
     <fragment
         android:id="@+id/chatFragment"
-        android:name="de.alexkononsol.gptchatapp.ChatFragment"
+        android:name="de.alexkononsol.gptchatapp.ui.fragments.ChatFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>

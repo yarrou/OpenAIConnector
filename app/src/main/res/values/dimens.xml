@@ -2,4 +2,10 @@
 <resources>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="subMenuTextSize">19sp</dimen>
+    <dimen name="smallTextSize">16sp</dimen>
+    <dimen name="normalTextSize">22sp</dimen>
+    <dimen name="bigTextSize">35sp</dimen>
+    <dimen name="paddingNormal">30dp</dimen>
+    <dimen name="paddingSmall">15dp</dimen>
 </resources>

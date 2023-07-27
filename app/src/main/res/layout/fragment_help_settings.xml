@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="@dimen/paddingSmall"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="@dimen/paddingNormal"
+        android:paddingBottom="@dimen/paddingSmall"
+        android:text="@string/settingsHelpName"
+        android:textSize="@dimen/subMenuTextSize" />
+
+    <CheckBox
+        android:id="@+id/viewHelpOnStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/paddingNormal"
+        android:text="@string/viewHelpOnStart" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/paddingNormal">
+
+        <ImageButton
+            android:id="@+id/help_view_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/baseline_help_24"
+            android:contentDescription="@string/settingsHelpButton"
+            android:paddingBottom="@dimen/paddingNormal"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/paddingSmall"
+            android:text="@string/settingsHelpButton"
+            tools:ignore="RtlSymmetry" />
+    </LinearLayout>
+</LinearLayout>
