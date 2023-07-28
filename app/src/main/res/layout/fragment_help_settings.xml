@@ -14,13 +14,6 @@
         android:text="@string/settingsHelpName"
         android:textSize="@dimen/subMenuTextSize" />
 
-    <CheckBox
-        android:id="@+id/viewHelpOnStart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/paddingNormal"
-        android:text="@string/viewHelpOnStart" />
-
 
     <LinearLayout
         android:layout_width="match_parent"
