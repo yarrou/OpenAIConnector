@@ -4,8 +4,10 @@
     <string name="chat_greeting">Welcome to the GPT-3.5 turbo chat. Send your message to start chatting.</string>
     <string name="version">version : %s</string>
 
-    <string name="prompt_password">The developer\'s main motivation was to constantly improve his programming skills. He translated his ideas into a user-friendly and feature-rich application, which also became a great way for him personally to utilize the potential of chatGPT for various tasks.</string>
-    <string name="action_sign_in">The great combination of simplicity and functionality makes this application the perfect companion for anyone who strives for outstanding communication results with OpenAI\'s chatGPT. Immerse yourself in the wonderful world of artificial intelligence with this Android app.</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="action_sign_in">Sign in</string>
     <string name="registration_offer">don\'t have an account yet?</string>
     <string name="sign_up_button_text">Sign Up</string>
     <string name="continue_offer">or continue without an account</string>
@@ -37,7 +39,17 @@
     <string name="settingsHelpName">manual</string>
     <string name="viewHelpOnStart">show description at program start</string>
     <string name="saveSettingsToast">Settings saved</string>
-    <string name="Tipps">Here are some typical tips that artificial intelligence can provide to the user:  Problem and error solving: Artificial intelligence is able to help you find solutions to various problems and errors you encounter with your computer, programs or devices.  Support and instructions: Artificial intelligence can provide detailed instructions and hints to help you better understand how to use a particular software or device.  Information Retrieval: With its information processing capabilities, artificial intelligence can help you with information retrieval on a variety of topics including general knowledge, news, research, and more.  Study Support: Artificial intelligence can provide study assistance by offering materials, explanations of complex concepts, and additional educational resources.  Creative Ideas: Artificial intelligence can offer different options and solutions for your project or task, helping you find inspiration and creative ideas.  Translation: Artificial intelligence can help you translate texts or phrases into different languages, making it easier to communicate with people from different countries.  Planning and organizing: Artificial intelligence can help you create a schedule, remind you of important events and tasks, and provide planning tips.  Entertainment: Artificial intelligence can offer various forms of entertainment such as jokes, riddles, interesting facts or even write a short story for your relaxation and entertainment.  Product and service recommendations: Artificial intelligence can provide you with recommendations and reviews of various products and services, helping you make a more informed decision when shopping.  Motivation and inspiration: Artificial Intelligence can support you by providing motivational quotes and stimulating words, helping you cope with challenges and boost your mood for more productive work.</string>
-    <string name="text_about">This application is an integration with a service deployed on a Java Spring server, providing a fast and stable interaction with chatGPT. It has a simple and intuitive user interface, making it easy to communicate with this magnificent artificial intelligence.</string>
+    <string name="tips">\n\n Here are some typical tips that artificial intelligence can provide to the user: \n\n
+        Problem and error solving: Artificial intelligence is able to help you find solutions to various problems and errors you encounter with your computer, programs or devices. \n\n
+        Support and instructions: Artificial intelligence can provide detailed instructions and hints to help you better understand how to use a particular software or device. \n\n
+        Information Retrieval: With its information processing capabilities, artificial intelligence can help you with information retrieval on a variety of topics including general knowledge, news, research, and more. \n\n
+        Study Support: Artificial intelligence can provide study assistance by offering materials, explanations of complex concepts, and additional educational resources. \n\n
+        Creative Ideas: Artificial intelligence can offer different options and solutions for your project or task, helping you find inspiration and creative ideas. \n\n
+        Translation: Artificial intelligence can help you translate texts or phrases into different languages, making it easier to communicate with people from different countries. \n\n
+        Planning and organizing: Artificial intelligence can help you create a schedule, remind you of important events and tasks, and provide planning tips. \n\n
+        Entertainment: Artificial intelligence can offer various forms of entertainment such as jokes, riddles, interesting facts or even write a short story for your relaxation and entertainment. \n\n
+        Product and service recommendations: Artificial intelligence can provide you with recommendations and reviews of various products and services, helping you make a more informed decision when shopping. \n\n
+        Motivation and inspiration: Artificial Intelligence can support you by providing motivational quotes and stimulating words, helping you cope with challenges and boost your mood for more productive work.</string>
+    <string name="text_about">This application is an integration with a service deployed on a Java Spring server, providing a fast and stable interaction with chatGPT. It has a simple and intuitive user interface, making it easy to communicate with this magnificent artificial intelligence.The developer\'s main motivation was to constantly improve his programming skills. He translated his ideas into a user-friendly and feature-rich application, which also became a great way for him personally to utilize the potential of chatGPT for various tasks.The great combination of simplicity and functionality makes this application the perfect companion for anyone who strives for outstanding communication results with OpenAI\'s chatGPT. Immerse yourself in the wonderful world of artificial intelligence with this Android app.</string>
 
 </resources>
