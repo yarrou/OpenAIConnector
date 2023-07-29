@@ -6,8 +6,9 @@ import androidx.appcompat.widget.Toolbar;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.widget.TextView;
+
+import de.alexkononsol.gptchatapp.utils.SettingsManager;
 
 
 public class HelpActivity extends AppCompatActivity {
@@ -23,13 +24,12 @@ public class HelpActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_help);
         setSupportActionBar(toolbar);
 
-        //ActionBar actionBar = getSupportActionBar();
-        //actionBar.setDisplayHomeAsUpEnabled(true);
-        Log.d("ChatGpt","starting HelpActivity method onStart()");
-        //String textSize = SettingsManager.getSettings().getTextSize();
-        TextView textAbout = (TextView) findViewById(R.id.textAbout);
+        Log.d("ChatGpt", "starting HelpActivity method onStart()");
+        float textSize = SettingsManager.getSettings().getTextSize();
+        ((TextView) findViewById(R.id.textAbout)).setTextSize(textSize);
+        ((TextView) findViewById(R.id.textTips)).setTextSize(textSize);
+
         //textAbout.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
-    //Menu of Toolbar
 }
