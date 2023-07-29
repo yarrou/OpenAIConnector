@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         if (SettingsManager.getSettings().getAuthToken().equals("")) {
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(intent);
+            finish();
         }
     }
 
