@@ -55,6 +55,7 @@
     <string name="nav_open_drawer">Open navigation drawer</string>
     <string name="nav_close_drawer">Close navigation drawer</string>
 
-    <string name="about_fragment_title">About</string>
+    <string name="about_fragment_title">About</string>\
+    <string name="send">send</string>
 
 </resources>

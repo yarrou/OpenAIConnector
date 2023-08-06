@@ -57,5 +57,6 @@
     <string name="nav_close_drawer">Close navigation drawer</string>
 
     <string name="about_fragment_title">О приложении</string>
+    <string name="send">отправить</string>
 
 </resources>
