@@ -30,6 +30,7 @@ public class ChatSettingsFragment extends Fragment {
                 textSize = Constants.TEXT_SIZE_SMALL;
             } else textSize = Constants.TEXT_SIZE_NORMAL;
             SettingsManager.getSettings().setTextSize(textSize);
+            SettingsManager.save();
         });
 
     }

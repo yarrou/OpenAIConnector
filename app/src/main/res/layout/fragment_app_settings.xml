@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.AppSettingsFragment">
+
+    <TextView
+        android:id="@+id/about_program_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:textSize="19sp"
+        android:text="@string/about_fragment_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/app_image_about"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/baseline_app_shortcut_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/about_program_title" />
+
+    <TextView
+        android:id="@+id/about_fragment_version_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/app_name"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/app_image_about"
+        app:layout_constraintTop_toBottomOf="@+id/about_program_title" />
+
+    <TextView
+        android:id="@+id/app_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="5dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/app_image_about"
+        app:layout_constraintTop_toBottomOf="@+id/about_fragment_version_title" />
+
+    <ImageButton
+        android:id="@+id/helpButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/baseline_help_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_version" />
+
+    <TextView
+        android:id="@+id/helpButtonText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/help_center"
+        app:layout_constraintStart_toEndOf="@+id/helpButton"
+        app:layout_constraintTop_toBottomOf="@+id/app_version" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

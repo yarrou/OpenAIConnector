@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="@dimen/paddingSmall"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:paddingBottom="@dimen/paddingSmall"
-        android:text="@string/chat_settings_title"
-        android:textSize="@dimen/subMenuTextSize"/>
+    android:paddingTop="@dimen/paddingSmall">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
         android:paddingBottom="@dimen/paddingSmall"
+        android:text="@string/chat_settings_title"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/subMenuTextSize"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/name_text_size_settings"
         android:textSize="@dimen/smallTextSize" />
 
@@ -33,24 +33,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
-            android:text="@string/textSizeSmall"
-            android:textSize="@dimen/smallTextSize" />
+            android:text="@string/textSizeSmall" />
 
         <RadioButton
             android:id="@+id/textSizeNormalRadio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
-            android:text="@string/textSizeNormal"
-            android:textSize="@dimen/normalTextSize" />
+            android:text="@string/textSizeNormal" />
 
         <RadioButton
             android:id="@+id/textSizeLargeRadio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
-            android:text="@string/textSizeLarge"
-            android:textSize="@dimen/bigTextSize" />
+            android:text="@string/textSizeLarge" />
     </RadioGroup>
 
 </LinearLayout>

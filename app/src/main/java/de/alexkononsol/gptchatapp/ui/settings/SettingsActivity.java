@@ -39,10 +39,11 @@ public class SettingsActivity extends AppCompatActivity {
     @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId()==R.id.action_save_settings){
+        /*if(item.getItemId()==R.id.action_save_settings){
             saveSetting();
             return true;
-        }else return super.onOptionsItemSelected(item);
+        }else */
+        return super.onOptionsItemSelected(item);
 
     }
 }

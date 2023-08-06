@@ -27,8 +27,8 @@
     <string name="userAccountTitle">Konto</string>
     <string name="logoutButtonText">Abmelden </string>
     <string name="sign_in_button_text">Anmelden</string>
-    <string name="authInfo">Sie sind eingeloggt als : </string>
-    <string name="anonimous">Sie sind nicht eingeloggt, Mindestfunktionen</string>
+    <string name="authInfo">Email\n\n </string>
+    <string name="anonimous">Sie sind nicht eingeloggt</string>
 
     <string name="chat_settings_title">Chat-Einstellungen</string>
     <string name="name_text_size_settings">Textgröße</string>
@@ -51,5 +51,10 @@
         Unterhaltung: Künstliche Intelligenz kann verschiedene Formen der Unterhaltung anbieten, z. B. Witze, Rätsel, interessante Fakten oder sogar eine Kurzgeschichte zu Ihrer Unterhaltung schreiben.  \n\n
         Produkt- und Dienstleistungsempfehlungen: Künstliche Intelligenz kann Ihnen Empfehlungen und Bewertungen zu verschiedenen Produkten und Dienstleistungen geben und Ihnen so helfen, beim Einkaufen eine fundierte Entscheidung zu treffen.  \n\n
         Motivation und Inspiration: Künstliche Intelligenz kann Sie mit motivierenden Zitaten und aufmunternden Worten unterstützen, die Ihnen helfen, Ihren Alltag zu bewältigen und Ihre Einstellung zu verbessern, um produktiver zu sein.</string>
+    <string name="help_center">Hilfe-Center</string>
+    <string name="nav_open_drawer">Open navigation drawer</string>
+    <string name="nav_close_drawer">Close navigation drawer</string>
+
+    <string name="about_fragment_title">Über</string>
 
 </resources>

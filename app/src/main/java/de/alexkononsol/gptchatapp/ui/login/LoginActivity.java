@@ -60,6 +60,7 @@ public class LoginActivity extends AppCompatActivity {
 
             ServerResponse response = requestToServer.loginOrRegistration(userForm, RetrofitRequestType.LOGIN);//loginRequest.send();
 
+
             handler.post(() -> {
                 //UI Thread work here
                 if (response.getCode() == 200) {

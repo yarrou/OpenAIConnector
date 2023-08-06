@@ -24,11 +24,11 @@
     <string name="registration_success_message">Ліст з інструкцыямі па актывацыі акаўнта адпраўлена на паказаны Вамі адрас электроннай пошты.</string>
     <string name="settings_title">Наладжваньне</string>
 
-    <string name="userAccountTitle">Уліковы запіс карыстальніка</string>
+    <string name="userAccountTitle">Акаўнт</string>
     <string name="logoutButtonText">Выйсці</string>
     <string name="sign_in_button_text">Увайсці</string>
-    <string name="authInfo">вы ўвайшлі ў сістэму як : </string>
-    <string name="anonimous">вы не ўвайшлі, мінімум функцый</string>
+    <string name="authInfo">Email\n\n </string>
+    <string name="anonimous">вы не ўвайшлі</string>
 
     <string name="chat_settings_title">Налады чата</string>
     <string name="name_text_size_settings">Памер тэксту</string>
@@ -51,5 +51,10 @@
         Забаўка: штучны інтэлект можа прапанаваць розныя формы забавы, такія як жарты, загадкі, цікавыя факты ці нават напісаць кароткую гісторыю для вашага адпачынку і забавы. \n\n
         Рэкамендацыі прадуктаў і паслуг: штучны інтэлект можа даць вам рэкамендацыі і водгукі аб розных прадуктах і паслугах, дапамагаючы вам прыняць больш інфармаваныя рашэнне пры пакупках. \n\n
         Матывацыя і натхненне: штучны інтэлект можа падтрымаць вас, падаючы матывацыйны цытаты і стымулюючыя словы, дапамагаючы вам справіцца з цяжкасцямі і падняць свой настрой для больш прадуктыўнай працы.</string>
+    <string name="help_center">Даведка</string>
+    <string name="nav_open_drawer">Open navigation drawer</string>
+    <string name="nav_close_drawer">Close navigation drawer</string>
+
+    <string name="about_fragment_title">Аб дадатку</string>
 
 </resources>

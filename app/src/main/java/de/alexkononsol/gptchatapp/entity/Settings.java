@@ -7,7 +7,7 @@ import de.alexkononsol.gptchatapp.utils.Constants;
 import com.google.gson.Gson;
 
 public class Settings {
-    private String hostName;
+    private final String hostName;
     private String userName;
     private String authToken;
     private float textSize;
@@ -21,6 +21,7 @@ public class Settings {
         this.isNewInstallation = true;
         this.authToken = "";
         this.textSize = Constants.TEXT_SIZE_NORMAL;
+
     }
 
     public Settings(Settings settings) {

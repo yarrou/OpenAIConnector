@@ -34,8 +34,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <fragment
-                android:id="@+id/help_settings_fragment"
-                android:name="de.alexkononsol.gptchatapp.ui.fragments.HelpSettingsFragment"
+                android:id="@+id/app_settings_fragment"
+                android:name="de.alexkononsol.gptchatapp.ui.fragments.AppSettingsFragment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>

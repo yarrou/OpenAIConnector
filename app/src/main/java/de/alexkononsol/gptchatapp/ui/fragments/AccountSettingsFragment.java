@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.concurrent.ExecutorService;
@@ -23,7 +24,8 @@ import de.alexkononsol.gptchatapp.utils.SettingsManager;
 
 
 public class AccountSettingsFragment extends Fragment {
-    private Button logoutButton;
+    private ImageButton logoutButton;
+    private TextView logoutText;
     private TextView authInfo;
 
     @Override
@@ -38,6 +40,7 @@ public class AccountSettingsFragment extends Fragment {
         super.onStart();
         authInfo = getView().findViewById(R.id.authSettingsStatus);
         logoutButton = getView().findViewById(R.id.logoutButton);
+        logoutText = getView().findViewById(R.id.logoutText);
     }
 
     private void viewInfoAboutAccount() {
@@ -47,10 +50,10 @@ public class AccountSettingsFragment extends Fragment {
             img = getContext().getDrawable(R.drawable.baseline_logout_24);
         } else {
             authInfo.setText(getString(R.string.anonimous));
-            logoutButton.setText(getString(R.string.sign_in_button_text));
+            logoutText.setText(getString(R.string.sign_in_button_text));
             img = getContext().getDrawable(R.drawable.baseline_login_24);
         }
-        logoutButton.setCompoundDrawablesWithIntrinsicBounds(img,null,null,null);
+        logoutButton.setBackground(img);
     }
 
     @Override
@@ -80,8 +83,8 @@ public class AccountSettingsFragment extends Fragment {
             handler.post(() -> {
                 //UI Thread work here
                 authInfo.setText(getString(R.string.anonimous));
-                logoutButton.setText(getString(R.string.sign_in_button_text));
-                logoutButton.setCompoundDrawablesWithIntrinsicBounds(img,null,null,null);
+                logoutText.setText(getString(R.string.sign_in_button_text));
+                logoutButton.setBackground(img);
             });
         });
     }
