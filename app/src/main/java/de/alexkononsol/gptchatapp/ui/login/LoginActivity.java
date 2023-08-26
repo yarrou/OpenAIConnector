@@ -69,6 +69,7 @@ public class LoginActivity extends AppCompatActivity {
                     SettingsManager.save();
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
+                    finish();
                 } else textViewResult.setText(response.getData().toString());
             });
         });
