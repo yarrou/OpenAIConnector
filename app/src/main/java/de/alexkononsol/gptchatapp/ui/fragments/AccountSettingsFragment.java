@@ -11,7 +11,6 @@ import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -75,8 +74,8 @@ public class AccountSettingsFragment extends Fragment {
 
         executor.execute(() -> {
             //Background work here
-            SettingsManager.getSettings().setAuthToken(null);
-            SettingsManager.getSettings().setUserName(null);
+            SettingsManager.getSettings().setAuthToken("");
+            SettingsManager.getSettings().setUserName("");
             SettingsManager.save();
             Drawable img = getContext().getDrawable(R.drawable.baseline_login_24);
 
