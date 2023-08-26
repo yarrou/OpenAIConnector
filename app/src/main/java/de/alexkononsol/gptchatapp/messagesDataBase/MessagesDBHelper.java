@@ -48,4 +48,10 @@ public class MessagesDBHelper extends SQLiteOpenHelper {
         }
         //if (oldVersion < 2) {}
     }
+    public void deleteAllMessages() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete("MESSAGE", null, null);
+        insertMessage(db, new Message(context.getString(R.string.chat_greeting),"gpt-3,5 turbo",false));
+        db.close();
+    }
 }
