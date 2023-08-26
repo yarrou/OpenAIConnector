@@ -18,6 +18,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import de.alexkononsol.gptchatapp.R;
+import de.alexkononsol.gptchatapp.messagesDataBase.MessagesDBHelper;
 import de.alexkononsol.gptchatapp.ui.login.LoginActivity;
 import de.alexkononsol.gptchatapp.utils.SettingsManager;
 
@@ -26,6 +27,7 @@ public class AccountSettingsFragment extends Fragment {
     private ImageButton logoutButton;
     private TextView logoutText;
     private TextView authInfo;
+    private MessagesDBHelper dbHelper;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -60,7 +62,7 @@ public class AccountSettingsFragment extends Fragment {
         super.onResume();
         viewInfoAboutAccount();
         logoutButton.setOnClickListener(v -> {
-            if (SettingsManager.getSettings().getUserName() != null) {
+            if (SettingsManager.getSettings().getUserName() != "") {
                 signOut();
             } else {
                 signIn();
@@ -77,6 +79,8 @@ public class AccountSettingsFragment extends Fragment {
             SettingsManager.getSettings().setAuthToken("");
             SettingsManager.getSettings().setUserName("");
             SettingsManager.save();
+            dbHelper = new MessagesDBHelper(getContext());
+            dbHelper.deleteAllMessages();
             Drawable img = getContext().getDrawable(R.drawable.baseline_login_24);
 
             handler.post(() -> {

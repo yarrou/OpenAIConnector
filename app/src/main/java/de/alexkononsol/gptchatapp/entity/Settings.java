@@ -20,6 +20,7 @@ public class Settings {
         this.hostName = Constants.DEFAULT_HOST_URL;
         this.isNewInstallation = true;
         this.authToken = "";
+        this.userName = "";
         this.textSize = Constants.TEXT_SIZE_NORMAL;
 
     }
