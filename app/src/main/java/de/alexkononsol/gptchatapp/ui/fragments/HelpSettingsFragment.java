@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-import de.alexkononsol.gptchatapp.HelpActivity;
+import de.alexkononsol.gptchatapp.ui.HelpActivity;
 import de.alexkononsol.gptchatapp.R;
 
 public class HelpSettingsFragment extends Fragment {

@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import de.alexkononsol.gptchatapp.MainActivity;
+import de.alexkononsol.gptchatapp.ui.MainActivity;
 import de.alexkononsol.gptchatapp.R;
 import de.alexkononsol.gptchatapp.connectionUtils.ServerResponse;
 import de.alexkononsol.gptchatapp.connectionUtils.request.RetrofitRequestToServer;

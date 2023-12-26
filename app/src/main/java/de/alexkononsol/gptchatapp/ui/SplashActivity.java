@@ -1,4 +1,4 @@
-package de.alexkononsol.gptchatapp;
+package de.alexkononsol.gptchatapp.ui;
 
 import static java.lang.String.format;
 
@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.widget.TextView;
 
+import de.alexkononsol.gptchatapp.R;
 import de.alexkononsol.gptchatapp.utils.SettingsManager;
 import de.alexkononsol.gptchatapp.utils.SharedPreferenceAssistant;
 

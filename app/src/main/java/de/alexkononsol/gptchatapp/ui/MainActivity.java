@@ -1,4 +1,4 @@
-package de.alexkononsol.gptchatapp;
+package de.alexkononsol.gptchatapp.ui;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -6,16 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.widget.Toolbar;
@@ -26,15 +21,11 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.navigation.NavigationView;
 
-import java.io.File;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
+import de.alexkononsol.gptchatapp.R;
 import de.alexkononsol.gptchatapp.ui.fragments.ChatFragment;
 import de.alexkononsol.gptchatapp.ui.login.LoginActivity;
 import de.alexkononsol.gptchatapp.ui.settings.SettingsActivity;
 import de.alexkononsol.gptchatapp.utils.SettingsManager;
-import retrofit2.http.POST;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -62,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onResume() {
         super.onResume();
+
         try {
             if (SettingsManager.getSettings().getAuthToken().equals("")) {
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);

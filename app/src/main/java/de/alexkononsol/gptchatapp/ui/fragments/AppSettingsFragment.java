@@ -15,9 +15,8 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import de.alexkononsol.gptchatapp.HelpActivity;
+import de.alexkononsol.gptchatapp.ui.HelpActivity;
 import de.alexkononsol.gptchatapp.R;
-import de.alexkononsol.gptchatapp.utils.SettingsManager;
 
 
 public class AppSettingsFragment extends Fragment {
