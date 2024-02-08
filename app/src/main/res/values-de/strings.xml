@@ -58,4 +58,9 @@
     <string name="about_fragment_title">Über</string>
     <string name="send">senden</string>
 
+    <string name="popup_window_favorites">Favoriten</string>
+    <string name="popup_window_delete">entfernen</string>
+    <string name="popup_window_share">teilen</string>
+
+    <string name="action_all_messages">Alle Nachrichten</string>
 </resources>

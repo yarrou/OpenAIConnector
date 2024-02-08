@@ -58,4 +58,10 @@
     <string name="about_fragment_title">Аб дадатку</string>
     <string name="send">адправіць</string>
 
+    <string name="popup_window_favorites">Абранае</string>
+    <string name="popup_window_delete">Выдаліць</string>
+    <string name="popup_window_share">Падзяліцца</string>
+
+    <string name="action_all_messages">Усе паведамленні</string>
+
 </resources>

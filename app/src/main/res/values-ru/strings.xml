@@ -59,4 +59,10 @@
     <string name="about_fragment_title">О приложении</string>
     <string name="send">отправить</string>
 
+    <string name="popup_window_favorites">Избранное</string>
+    <string name="popup_window_delete">Удалить</string>
+    <string name="popup_window_share">Поделиться</string>
+
+    <string name="action_all_messages">Все сообщения</string>
+
 </resources>

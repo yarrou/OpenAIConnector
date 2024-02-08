@@ -58,4 +58,10 @@
     <string name="about_fragment_title">About</string>\
     <string name="send">send</string>
 
+    <string name="popup_window_favorites">Favorites</string>
+    <string name="popup_window_delete">Delete</string>
+    <string name="popup_window_share">Share</string>
+
+    <string name="action_all_messages">All messages</string>
+
 </resources>
