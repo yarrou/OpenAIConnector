@@ -63,4 +63,6 @@
     <string name="popup_window_share">teilen</string>
 
     <string name="action_all_messages">Alle Nachrichten</string>
+    <string name="share_by">Teilen mit</string>
+
 </resources>

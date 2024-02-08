@@ -63,5 +63,6 @@
     <string name="popup_window_share">Share</string>
 
     <string name="action_all_messages">All messages</string>
+    <string name="share_by">Share by</string>
 
 </resources>

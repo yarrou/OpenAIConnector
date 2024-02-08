@@ -64,5 +64,7 @@
     <string name="popup_window_share">Поделиться</string>
 
     <string name="action_all_messages">Все сообщения</string>
+    <string name="share_by">Поделиться с помощью</string>
+
 
 </resources>
