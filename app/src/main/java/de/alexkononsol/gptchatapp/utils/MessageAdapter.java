@@ -2,30 +2,40 @@ package de.alexkononsol.gptchatapp.utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
 import de.alexkononsol.gptchatapp.R;
 import de.alexkononsol.gptchatapp.entity.Message;
+import de.alexkononsol.gptchatapp.utils.utilInterface.OnMessageItemClickListener;
 
 import java.util.List;
 
 public class MessageAdapter extends BaseAdapter {
+    private OnMessageItemClickListener clickListener;
     List<Message> messages;
     Context context;
 
-    public MessageAdapter(Context context, List<Message> messages) {
+    public MessageAdapter(Context context, List<Message> messages, OnMessageItemClickListener listener) {
         this.context = context;
         this.messages = messages;
+        this.clickListener = listener;
     }
 
     public void add(Message message) {
         this.messages.add(message);
         notifyDataSetChanged(); // to render the list we need to notify
+    }
+    public void delete(Message message){
+        this.messages.remove(message);
+        notifyDataSetChanged();
     }
 
     @Override
@@ -55,6 +65,7 @@ public class MessageAdapter extends BaseAdapter {
             holder.messageBody = (TextView) convertView.findViewById(R.id.message_body);
             convertView.setTag(holder);
             holder.messageBody.setText(message.getText());
+
         } else { // this message was sent by someone else so let's create an advanced chat bubble on the left
             convertView = messageInflater.inflate(R.layout.their_message, null);
             holder.avatar = (View) convertView.findViewById(R.id.avatar);
@@ -66,7 +77,20 @@ public class MessageAdapter extends BaseAdapter {
             holder.messageBody.setText(message.getText());
             holder.avatar.setBackgroundResource(R.drawable.ic_launcher_round);
         }
+        if (message.isFavorites()){
+            holder.isFavorites = (ImageView) convertView.findViewById(R.id.is_favorites);
+            holder.isFavorites.setVisibility(View.VISIBLE);
+        }
+        holder.date = (TextView) convertView.findViewById(R.id.date_message);
+        holder.date.setText(message.getDate());
         holder.messageBody.setTextSize(SettingsManager.getSettings().getTextSize());
+
+        holder.messageBody.setOnClickListener(view -> {
+            if (clickListener != null) {
+                clickListener.onMessageItemClick(message,view);
+            }
+        });
+
         return convertView;
     }
 
@@ -76,4 +100,6 @@ class MessageViewHolder {
     public View avatar;
     public TextView name;
     public TextView messageBody;
+    public ImageView isFavorites;
+    public TextView date;
 }

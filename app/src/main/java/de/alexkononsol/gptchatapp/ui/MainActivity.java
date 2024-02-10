@@ -28,9 +28,9 @@ import de.alexkononsol.gptchatapp.ui.settings.SettingsActivity;
 import de.alexkononsol.gptchatapp.utils.SettingsManager;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    private ChatFragment chatFragment;
+    private boolean showAllMessages = false;
 
-
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,11 +43,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        Fragment chatFragment = new ChatFragment();
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.content_frame, chatFragment);
-        ft.commit();
-
     }
 
     @Override
@@ -65,6 +60,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 TextView userNameTextView = (TextView) headerView.findViewById(R.id.userNameNav);
                 userNameTextView.setText(SettingsManager.getSettings().getUserName());
+
+                if (chatFragment == null) {
+                    chatFragment = new ChatFragment();
+                }
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.content_frame, chatFragment);
+                ft.commit();
             }
         } catch (Exception e) {
             Log.e("chatgpt", e.getLocalizedMessage(), e);
@@ -78,17 +80,38 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return super.onCreateOptionsMenu(menu);
     }
 
-    /*@Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        MenuItem allMessagesItem = menu.findItem(R.id.action_all_messages);
+        MenuItem favoritesItem = menu.findItem(R.id.action_favorites);
 
-        if (item.getItemId() == R.id.action_settings) {
-            Intent intent = new Intent(this, SettingsActivity.class);
-            startActivity(intent);
+        allMessagesItem.setVisible(showAllMessages);
+        favoritesItem.setVisible(!showAllMessages);
+
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_favorites) {
+            showAllMessages = true;
+            invalidateOptionsMenu();
+
+            chatFragment.updateFragmentState(1, null);
+
+            return true;
+        } else if (id == R.id.action_all_messages) {
+            showAllMessages = false;
+            invalidateOptionsMenu();
+
+            chatFragment.updateFragmentState(0, null);
+
             return true;
         } else {
             return super.onOptionsItemSelected(item);
         }
-    }*/
+    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -126,5 +149,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             super.onBackPressed();
         }
     }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        getSupportFragmentManager().putFragment(outState, "CHAT_FRAGMENT", chatFragment);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        chatFragment = (ChatFragment) getSupportFragmentManager().getFragment(savedInstanceState, "CHAT_FRAGMENT");
+    }
+
 }
 

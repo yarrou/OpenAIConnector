@@ -9,10 +9,10 @@ public class MessagesConverter {
     }
 
     public Message convertToGPTMessage(String text) {
-        return new Message(text, "gpt-3,5 turbo", false);
+        return new Message(text, "gpt-3,5 turbo", false,false);
     }
     public Message convertToMyMessage(String text) {
-        return new Message(text, "I", true);
+        return new Message(text, "I", true,false);
     }
 
 }
