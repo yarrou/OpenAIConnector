@@ -1,26 +1,33 @@
 package de.alexkononsol.gptchatapp.entity;
 
 import android.icu.text.SimpleDateFormat;
-import android.icu.util.Calendar;
+import java.util.Date;
+
 
 public class Message {
-    private final String text; // message body
-    private final String userName;// name of the user that sent this message
-    private final String timeAndDate;
-    private final boolean belongsToCurrentUser; // is this message sent by us?
+    private long id;
+    private final String text;
+    private final String userName;
+    private final long timeInMilliseconds;
+    private final boolean belongsToCurrentUser;
+    private boolean isFavorites;
 
 
-    public Message(String text, String userName, boolean belongsToCurrentUser) {
+    public Message(String text, String userName, boolean belongsToCurrentUser, boolean isFavorites) {
         this.text = text;
         this.userName = userName;
         this.belongsToCurrentUser = belongsToCurrentUser;
-        this.timeAndDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());
+        this.timeInMilliseconds = System.currentTimeMillis();
+        this.isFavorites = isFavorites;
     }
-    public Message(String text, String userName, String timeAndDate , boolean belongsToCurrentUser) {
+
+    public Message(long id, String text, String userName, long timeInMilliseconds, boolean belongsToCurrentUser,boolean isFavorites) {
+        this.id = id;
         this.text = text;
         this.userName = userName;
         this.belongsToCurrentUser = belongsToCurrentUser;
-        this.timeAndDate = timeAndDate;
+        this.timeInMilliseconds = timeInMilliseconds;
+        this.isFavorites = isFavorites;
     }
 
     public String getText() {
@@ -31,11 +38,33 @@ public class Message {
         return userName;
     }
 
+    public long getTimeInMilliseconds() {
+        return timeInMilliseconds;
+    }
+
     public boolean isBelongsToCurrentUser() {
         return belongsToCurrentUser;
     }
 
-    public String getTimeAndDate() {
-        return timeAndDate;
+    public boolean isFavorites() {
+        return isFavorites;
     }
+
+    public void setFavorites(boolean favorites) {
+        isFavorites = favorites;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getDate(){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+       return  sdf.format(new Date(this.timeInMilliseconds));
+    }
+
 }
