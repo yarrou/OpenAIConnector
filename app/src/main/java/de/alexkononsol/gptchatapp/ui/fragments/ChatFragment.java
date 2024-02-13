@@ -35,6 +35,7 @@ import de.alexkononsol.gptchatapp.entity.Message;
 import de.alexkononsol.gptchatapp.messagesDataBase.MessagesDBHelper;
 import de.alexkononsol.gptchatapp.ui.popupWindows.ChatPopupWindowManager;
 import de.alexkononsol.gptchatapp.utils.MessageAdapter;
+import de.alexkononsol.gptchatapp.utils.MessageProcessor;
 import de.alexkononsol.gptchatapp.utils.MessagesConverter;
 import de.alexkononsol.gptchatapp.utils.utilInterface.OnMessageItemClickListener;
 
@@ -56,6 +57,7 @@ public class ChatFragment extends Fragment implements OnMessageItemClickListener
     private String searchRequest;
     List<Message> messageList;
     Cursor cursor;
+    private MessageProcessor messageProcessor;
 
 
     public ChatFragment() {
@@ -84,7 +86,7 @@ public class ChatFragment extends Fragment implements OnMessageItemClickListener
     @Override
     public void onStart() {
         super.onStart();
-        editText = (EditText) getView().findViewById(R.id.editText);
+        editText = getView().findViewById(R.id.editText);
         dbHelper = new MessagesDBHelper(getContext());
         messageList = new ArrayList<>();
 
@@ -93,54 +95,19 @@ public class ChatFragment extends Fragment implements OnMessageItemClickListener
         messageAdapter = new MessageAdapter(getContext(), messageList, this);
         windowManager = new ChatPopupWindowManager(getContext(), dbHelper, messageAdapter);
 
-        messagesView = (ListView) getView().findViewById(R.id.messages_view);
+        messagesView = getView().findViewById(R.id.messages_view);
         messagesView.setAdapter(messageAdapter);
         messagesView.setSelection(messagesView.getCount() - 1);
 
         imageButton = getView().findViewById(R.id.send_button);
 
+        // Создаем экземпляр MessageProcessor
+        messageProcessor = new MessageProcessor(getContext(), dbHelper, windowManager);
+
         imageButton.setOnClickListener(v -> {
-            sendMessage();
+            // Вызываем метод processMessage из MessageProcessor
+            messageProcessor.processMessage(editText.getText().toString(), messageAdapter, messagesView);
         });
-    }
-
-    public void sendMessage() {
-        String textMessage = editText.getText().toString();
-        if (textMessage.length() > 0) {
-
-            editText.getText().clear();
-            Message message = new MessagesConverter().convertToMyMessage(textMessage);
-
-            getActivity().runOnUiThread(() -> {
-                SQLiteDatabase db = dbHelper.getReadableDatabase();
-                dbHelper.insertMessage(db, message);
-                db.close();
-                messageAdapter.add(message);
-                // scroll the ListView to the last added element
-                messagesView.setSelection(messagesView.getCount() - 1);
-            });
-            RetrofitRequestToServer requestToServer = new RetrofitRequestToServer(getContext());
-            MessagesConverter converter = new MessagesConverter();
-            ExecutorService executor = Executors.newSingleThreadExecutor();
-            Handler handler = new Handler(Looper.getMainLooper());
-            executor.execute(() -> {
-                //Background work here
-                ServerResponse response = requestToServer.chat(converter.convertToChatGPTMessage(message));
-                String content = response.getData().toString();
-                Message gptMessage = converter.convertToGPTMessage(content);
-                handler.post(() -> {
-                    //UI Thread work here
-                    SQLiteDatabase db = dbHelper.getReadableDatabase();
-                    dbHelper.insertMessage(db, gptMessage);
-                    db.close();
-                    messageAdapter.add(gptMessage);
-                    // scroll the ListView to the last added element
-                    messagesView.setSelection(messagesView.getCount() - 1);
-
-                });
-            });
-
-        }
     }
 
     @Override
