@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Handler;
 import android.os.Looper;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import java.util.concurrent.ExecutorService;
@@ -19,11 +20,13 @@ public class MessageProcessor {
     private final Context context;
     private final MessagesDBHelper dbHelper;
     private final ChatPopupWindowManager windowManager;
+    private final EditText editText;
 
-    public MessageProcessor(Context context, MessagesDBHelper dbHelper, ChatPopupWindowManager windowManager) {
+    public MessageProcessor(Context context, MessagesDBHelper dbHelper, ChatPopupWindowManager windowManager,EditText editText) {
         this.context = context;
         this.dbHelper = dbHelper;
         this.windowManager = windowManager;
+        this.editText = editText;
     }
 
     public void processMessage(String textMessage, MessageAdapter messageAdapter, ListView messagesView) {
@@ -60,6 +63,7 @@ public class MessageProcessor {
 
                         messageAdapter.add(gptMessage);
                         messagesView.setSelection(messagesView.getCount() - 1);
+                        editText.setText("");
                     });
                 });
             }).start();

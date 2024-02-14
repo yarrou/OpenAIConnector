@@ -101,11 +101,11 @@ public class ChatFragment extends Fragment implements OnMessageItemClickListener
 
         imageButton = getView().findViewById(R.id.send_button);
 
-        // Создаем экземпляр MessageProcessor
-        messageProcessor = new MessageProcessor(getContext(), dbHelper, windowManager);
+
+        messageProcessor = new MessageProcessor(getContext(), dbHelper, windowManager,editText);
 
         imageButton.setOnClickListener(v -> {
-            // Вызываем метод processMessage из MessageProcessor
+
             messageProcessor.processMessage(editText.getText().toString(), messageAdapter, messagesView);
         });
     }
