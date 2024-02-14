@@ -65,4 +65,7 @@
     <string name="action_all_messages">Alle Nachrichten</string>
     <string name="share_by">Teilen mit</string>
 
+    <string name="search">Abruf</string>
+    <string name="cancel">Absage</string>
+
 </resources>

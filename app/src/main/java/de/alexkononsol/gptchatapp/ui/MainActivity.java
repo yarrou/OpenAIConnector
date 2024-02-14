@@ -1,16 +1,22 @@
 package de.alexkononsol.gptchatapp.ui;
 
+import static de.alexkononsol.gptchatapp.ui.fragments.ChatFragment.SEARCH_MODE;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.widget.Toolbar;
@@ -108,6 +114,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             chatFragment.updateFragmentState(0, null);
 
             return true;
+        } else if (id == R.id.action_search) {
+            showSearchDialog();
+            return true;
+
         } else {
             return super.onOptionsItemSelected(item);
         }
@@ -142,10 +152,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
+            if (chatFragment != null) {
+                int initialMode = ChatFragment.NORMAL_MODE;
+                chatFragment.updateFragmentState(initialMode, null);
+            }
+
             super.onBackPressed();
         }
     }
@@ -163,6 +178,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         chatFragment = (ChatFragment) getSupportFragmentManager().getFragment(savedInstanceState, "CHAT_FRAGMENT");
     }
+    private void showSearchDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(getString(R.string.search));
+
+
+        final EditText input = new EditText(this);
+        input.setInputType(InputType.TYPE_CLASS_TEXT);
+        input.setPadding(20,10,20,10);
+        builder.setView(input);
+
+        builder.setPositiveButton(getString(R.string.search), (dialog, which) -> {
+            String searchQuery = input.getText().toString();
+            chatFragment.updateFragmentState(SEARCH_MODE, searchQuery);
+        });
+
+        builder.setNegativeButton(getString(R.string.cancel), (dialog, which) -> dialog.cancel());
+
+        builder.show();
+    }
+
 
 }
 

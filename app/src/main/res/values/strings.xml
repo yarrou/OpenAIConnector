@@ -64,5 +64,7 @@
 
     <string name="action_all_messages">All messages</string>
     <string name="share_by">Share by</string>
+    <string name="search">Search</string>
+    <string name="cancel">Cancel</string>
 
 </resources>

@@ -131,6 +131,10 @@ public class ChatFragment extends Fragment implements OnMessageItemClickListener
             } else if (mode == FAVORITES_MODE) {
                 cursor = db.query("MESSAGE", new String[]{"_id", "TEXT", "USER_NAME", "TIME_IN_MILLISECONDS", "BELONGS_TO_CURRENT_USER", "IS_FAVORITES"},
                         "IS_FAVORITES > 0", null, null, null, null);
+            }else if (mode == SEARCH_MODE){
+                cursor = db.query("MESSAGE", new String[]{"_id", "TEXT", "USER_NAME", "TIME_IN_MILLISECONDS", "BELONGS_TO_CURRENT_USER", "IS_FAVORITES"},
+                        "TEXT LIKE ?", new String[]{"%" + searchRequest + "%"},
+                        null, null, null);
             }
             if (cursor.moveToFirst()) {
                 Message dbMessage = new Message(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getLong(3), cursor.getInt(4) > 0, cursor.getInt(5) > 0);

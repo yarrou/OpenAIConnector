@@ -66,5 +66,8 @@
     <string name="action_all_messages">Все сообщения</string>
     <string name="share_by">Поделиться с помощью</string>
 
+    <string name="search">Поиск</string>
+    <string name="cancel">Отмена</string>
+
 
 </resources>
