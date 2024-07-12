@@ -13,7 +13,7 @@ android {
         //noinspection EditedTargetSdkVersion
         targetSdk 33
         versionCode 1
-        versionName "2.1.1"
+        versionName "2.2.0"
         setProperty("archivesBaseName", "OpenAIConnector" + " v-" + versionName )
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

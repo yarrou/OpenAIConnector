@@ -18,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
@@ -28,6 +29,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.navigation.NavigationView;
 
 import de.alexkononsol.gptchatapp.R;
+import de.alexkononsol.gptchatapp.connectionUtils.Role;
 import de.alexkononsol.gptchatapp.ui.fragments.ChatFragment;
 import de.alexkononsol.gptchatapp.ui.login.LoginActivity;
 import de.alexkononsol.gptchatapp.ui.settings.SettingsActivity;
@@ -36,6 +38,12 @@ import de.alexkononsol.gptchatapp.utils.SettingsManager;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private ChatFragment chatFragment;
     private boolean showAllMessages = false;
+    private TextView selectedRoleTextView;
+    private Role selectedRole = Role.GPT_3_5_TURBO_0125;
+
+    public Role getSelectedRole() {
+        return selectedRole;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +101,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         allMessagesItem.setVisible(showAllMessages);
         favoritesItem.setVisible(!showAllMessages);
+
+        MenuItem roleItem = menu.findItem(R.id.action_select_role);
+        View actionView = roleItem.getActionView();
+        selectedRoleTextView = actionView.findViewById(R.id.selected_role);
+        selectedRoleTextView.setText(selectedRole.getRoleName());
+
+
+        selectedRoleTextView.setOnClickListener(view -> showRoleSelectionDialog());
 
         return super.onPrepareOptionsMenu(menu);
     }
@@ -169,14 +185,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
 
-        getSupportFragmentManager().putFragment(outState, "CHAT_FRAGMENT", chatFragment);
+        Log.d("chatgpt","method onSaveInstanceState() is started");
+        outState.putString("SELECTED_ROLE", selectedRole.name());
+        Log.d("chatgpt","selected role is " + selectedRole.name());
+        //getSupportFragmentManager().putFragment(outState, "CHAT_FRAGMENT", chatFragment);
     }
 
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
 
-        chatFragment = (ChatFragment) getSupportFragmentManager().getFragment(savedInstanceState, "CHAT_FRAGMENT");
+        Log.d("chatgpt","method onRestoreInstanceState() is started");
+
+        if (savedInstanceState.containsKey("SELECTED_ROLE")) {
+            selectedRole = Role.valueOf(savedInstanceState.getString("SELECTED_ROLE"));
+            Log.d("chatgpt","saved selected role is " + selectedRole.name());
+        }else {
+            Log.d("chatgpt","selected role is not saved");
+        }
+        //chatFragment = (ChatFragment) getSupportFragmentManager().getFragment(savedInstanceState, "CHAT_FRAGMENT");
     }
     private void showSearchDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -198,6 +225,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         builder.show();
     }
 
+    private void showRoleSelectionDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Select Role");
+
+        String[] roles = new String[Role.values().length];
+        for (int i = 0; i < Role.values().length; i++) {
+            roles[i] = Role.values()[i].getRoleName();
+        }
+
+        builder.setItems(roles, (dialog, which) -> {
+            selectedRole = Role.values()[which];
+            selectedRoleTextView.setText(selectedRole.getRoleName());
+            Toast.makeText(this, "Role selected: " + selectedRole.getRoleName(), Toast.LENGTH_SHORT).show();
+            dialog.dismiss();
+        });
+
+        builder.show();
+    }
 
 }
 

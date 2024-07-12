@@ -69,5 +69,7 @@
     <string name="search">Поиск</string>
     <string name="cancel">Отмена</string>
 
+    <string name="select_role">Выбрать роль</string>
+
 
 </resources>

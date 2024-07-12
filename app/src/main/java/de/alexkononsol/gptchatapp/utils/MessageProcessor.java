@@ -10,6 +10,7 @@ import android.widget.ListView;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import de.alexkononsol.gptchatapp.connectionUtils.Role;
 import de.alexkononsol.gptchatapp.connectionUtils.ServerResponse;
 import de.alexkononsol.gptchatapp.connectionUtils.request.RetrofitRequestToServer;
 import de.alexkononsol.gptchatapp.entity.Message;
@@ -29,7 +30,7 @@ public class MessageProcessor {
         this.editText = editText;
     }
 
-    public void processMessage(String textMessage, MessageAdapter messageAdapter, ListView messagesView) {
+    public void processMessage(String textMessage, MessageAdapter messageAdapter, ListView messagesView, Role role) {
         if (textMessage.length() > 0) {
             Message message = new MessagesConverter().convertToMyMessage(textMessage);
 
@@ -51,9 +52,9 @@ public class MessageProcessor {
                 Handler handler = new Handler(Looper.getMainLooper());
                 executor.execute(() -> {
                     // Background work here
-                    ServerResponse response = requestToServer.chat(converter.convertToChatGPTMessage(message));
+                    ServerResponse response = requestToServer.chat(converter.convertToChatGPTMessage(message,role));
                     String content = response.getData().toString();
-                    Message gptMessage = converter.convertToGPTMessage(content);
+                    Message gptMessage = converter.convertToGPTMessage(content,role);
 
                     // Update UI on the main thread
                     handler.post(() -> {

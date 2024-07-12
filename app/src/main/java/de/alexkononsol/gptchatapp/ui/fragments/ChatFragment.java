@@ -29,10 +29,12 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import de.alexkononsol.gptchatapp.R;
+import de.alexkononsol.gptchatapp.connectionUtils.Role;
 import de.alexkononsol.gptchatapp.connectionUtils.ServerResponse;
 import de.alexkononsol.gptchatapp.connectionUtils.request.RetrofitRequestToServer;
 import de.alexkononsol.gptchatapp.entity.Message;
 import de.alexkononsol.gptchatapp.messagesDataBase.MessagesDBHelper;
+import de.alexkononsol.gptchatapp.ui.MainActivity;
 import de.alexkononsol.gptchatapp.ui.popupWindows.ChatPopupWindowManager;
 import de.alexkononsol.gptchatapp.utils.MessageAdapter;
 import de.alexkononsol.gptchatapp.utils.MessageProcessor;
@@ -69,6 +71,13 @@ public class ChatFragment extends Fragment implements OnMessageItemClickListener
         this.searchRequest = request;
     }
 
+    private Role getCurrentRole() {
+        if (getActivity() != null && getActivity() instanceof MainActivity) {
+            return ((MainActivity) getActivity()).getSelectedRole();
+        }
+        return Role.GPT_3_5_TURBO_0125;
+    }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -90,6 +99,8 @@ public class ChatFragment extends Fragment implements OnMessageItemClickListener
         dbHelper = new MessagesDBHelper(getContext());
         messageList = new ArrayList<>();
 
+
+
         loadMessages();
 
         messageAdapter = new MessageAdapter(getContext(), messageList, this);
@@ -106,7 +117,7 @@ public class ChatFragment extends Fragment implements OnMessageItemClickListener
 
         imageButton.setOnClickListener(v -> {
 
-            messageProcessor.processMessage(editText.getText().toString(), messageAdapter, messagesView);
+            messageProcessor.processMessage(editText.getText().toString(), messageAdapter, messagesView,getCurrentRole());
         });
     }
 

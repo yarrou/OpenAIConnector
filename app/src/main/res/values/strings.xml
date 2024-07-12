@@ -67,4 +67,6 @@
     <string name="search">Search</string>
     <string name="cancel">Cancel</string>
 
+    <string name="select_role">Select Role</string>
+
 </resources>
